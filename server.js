@@ -8,36 +8,33 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
 
     res.send(`
-    <html>
-      <body>
+<html>
+<body>
 
-        <h2>設備報修</h2>
+<h2>設備報修</h2>
 
-        /repair
+<form action填報人</p>
+<input type="text" name="reporter" />
 
-          <p>填報人</p>
-          <input type="text" name="reporter" />
+<p>設備名稱</p>
+<input type="text" name="equipment" />
 
-          <p>設備名稱</p>
-          <input type="text" name="equipment" />
+<p>故障描述</p>
+<textarea name="description"></textarea>
 
-          <p>故障描述</p>
-          <textarea name="description"></textarea>
+<br><br>
 
-          <br><br>
+<button type="submit">
+送出報修
+</button>
 
-          <button type="submit">
-            送出報修
-          </button>
+</form>
 
-        </form>
-
-      </body>
-    </html>
-    `);
+</body>
+</html>
+`);
 
 });
-
 app.post("/repair", (req, res) => {
 
     console.log("收到資料");
