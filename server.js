@@ -38,15 +38,11 @@ button{
 }
 </style>
 </head>
-
 <body>
 
 <h2>🔧 設備報修</h2>
 
-/repair
-
-<label>填報人</label>
-<input type="text" name="reporter" required>
+<form action="/repair" method="POSTtype="text" name="reporter" required>
 
 <label>設備名稱</label>
 <input type="text" name="equipment" required>
@@ -54,9 +50,7 @@ button{
 <label>故障描述</label>
 <textarea name="description" rows="5"></textarea>
 
-<button type="submit">
-送出報修
-</button>
+<button type="submit">送出報修</button>
 
 </form>
 
@@ -73,6 +67,10 @@ app.post("/repair", (req, res) => {
   res.send(`
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+<title>報修成功</title>
+</head>
 <body>
 
 <h2>✅ 報修成功</h2>
@@ -84,7 +82,6 @@ app.post("/repair", (req, res) => {
 </body>
 </html>
 `);
-
 });
 
 const PORT = process.env.PORT || 3000;
