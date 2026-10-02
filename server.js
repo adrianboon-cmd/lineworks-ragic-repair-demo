@@ -16,40 +16,27 @@ app.get("/form", (req, res) => {
 <head>
 <meta charset="utf-8">
 <title>設備報修</title>
-<style>
-body {
-  font-family: Arial;
-  padding: 20px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background: #00c73c;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-</style>
 </head>
-
 <body>
 
 <h2>🔧 設備報修</h2>
 
-<form method="POST" action="/input name="reporter" required>
+/repair
+
+<label>填報人</label>
+<br>
+<input type="text" name="reporter">
+<br><br>
 
 <label>設備名稱</label>
-<input name="equipment" required>
+<br>
+<input type="text" name="equipment">
+<br><br>
 
 <label>故障描述</label>
+<br>
 <textarea name="description"></textarea>
+<br><br>
 
 <button type="submit">
 送出報修
