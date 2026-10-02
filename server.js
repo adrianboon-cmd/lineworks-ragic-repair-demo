@@ -11,46 +11,75 @@ app.get("/", (req, res) => {
 
 app.get("/form", (req, res) => {
   res.send(`
-  <!DOCTYPE html>
-  <html>
-  <head>
-      <meta charset="utf-8">
-      <title>設備報修</title>
-      <style>
-          body{
-              font-family: Arial;
-              padding:20px;
-          }
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>設備報修</title>
+<style>
+body {
+  font-family: Arial;
+  padding: 20px;
+}
 
-          input,textarea{
-              width:100%;
-              padding:10px;
-              margin-top:5px;
-              margin-bottom:15px;
-          }
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+}
 
-          button{
-              width:100%;
-              padding:12px;
-              background:#00c73c;
-              color:white;
-              border:none;
-              border-radius:5px;
-          }
-      </style>
-  </head>
-  <body>
+button {
+  width: 100%;
+  padding: 12px;
+  background: #00c73c;
+  color: white;
+  border: none;
+}
+</style>
+</head>
 
-      <h2>🔧 設備報修</h2>
+<body>
 
-      <form method="POST" action="/repairl>
-          <input name="reporter">
+<h2>🔧 設備報修</h2>
 
-          <label>設備名稱</label>
-          <input name="equipment">
+<form action="/repair" method="put name="reporter" required>
 
-          <label>故障描述</label>
-          <textarea name="description"></textarea>
+<label>設備名稱</label>
+<input name="equipment" required>
 
-          <button type="submit">
-           
+<label>故障描述</label>
+<textarea name="description"></textarea>
+
+<button type="submit">
+送出報修
+</button>
+
+</form>
+
+</body>
+</html>
+`);
+});
+
+app.post("/repair", async (req, res) => {
+
+  console.log("========收到報修========");
+  console.log(req.body);
+
+  res.send(`
+<h2>✅ 報修成功</h2>
+
+<p>填報人：${req.body.reporter}</p>
+
+<p>設備名稱：${req.body.equipment}</p>
+
+<p>故障描述：${req.body.description}</p>
+`);
+
+});
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
+});
