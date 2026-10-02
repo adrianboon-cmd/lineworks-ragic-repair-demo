@@ -10,13 +10,14 @@ app.get("/", (req, res) => {
 
 app.post("/repair", async (req, res) => {
 
-  console.log("收到資料:");
+  console.log("收到報修資料");
 
   console.log(req.body);
 
   res.json({
     success: true,
-    message: "收到報修資料"
+    message: "報修建立成功",
+    ticketNo: "A20261002-001"
   });
 
 });
