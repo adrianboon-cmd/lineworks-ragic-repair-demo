@@ -34,6 +34,7 @@ button {
   background: #00c73c;
   color: white;
   border: none;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -42,10 +43,7 @@ button {
 
 <h2>🔧 設備報修</h2>
 
-/repair
-
-<label>填報人</label>
-<input name="reporter" required>
+<form method="POST" action="/input name="reporter" required>
 
 <label>設備名稱</label>
 <input name="equipment" required>
