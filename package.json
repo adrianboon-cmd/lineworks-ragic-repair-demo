@@ -1,0 +1,13 @@
+{
+  "name": "lineworks-ragic-repair",
+  "version": "1.0.0",
+  "description": "LINE WORKS Ragic Repair Demo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "express": "^4.21.2"
+  }
+}
