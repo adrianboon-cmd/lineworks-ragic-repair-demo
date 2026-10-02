@@ -42,7 +42,10 @@ button {
 
 <h2>🔧 設備報修</h2>
 
-<form action="/repair" method="put name="reporter" required>
+/repair
+
+<label>填報人</label>
+<input name="reporter" required>
 
 <label>設備名稱</label>
 <input name="equipment" required>
