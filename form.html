@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>設備報修</title>
+<style>
+body{
+    font-family: Arial;
+    padding:20px;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#00c73c;
+    color:white;
+    border:none;
+}
+</style>
+</head>
+
+<body>
+
+<h2>🔧 設備報修</h2>
+
+<form action="/repair" method="POST">
+
+="text" name="reporter" required>
+
+<label>設備名稱</label>
+<input type="text" name="equipment" required>
+
+<label>故障描述</label>
+<textarea name="description"></textarea>
+
+<button type="submit">
+送出報修
+</button>
+
+</form>
+
+</body>
+</html>
