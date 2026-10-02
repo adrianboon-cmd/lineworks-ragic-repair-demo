@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
+app.get("/form", (req, res) => {
   res.send("LINE WORKS Ragic Repair Demo Running");
 });
 
