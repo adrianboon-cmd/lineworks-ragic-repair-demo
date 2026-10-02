@@ -13,22 +13,12 @@ app.post("/repair", async (req, res) => {
 
   try {
 
-    console.log("收到報修資料");
-    console.log(req.body);
-
-    const payload = {
-      "1054240": req.body.reporter,
-      "1054241": req.body.equipment,
-      "1054242": req.body.description
-    };
-
-    console.log("準備送往Ragic");
-    console.log(payload);
+    console.log("========收到報修========");
+    console.log(JSON.stringify(req.body, null, 2));
 
     res.json({
       success: true,
-      message: "報修建立成功",
-      data: payload
+      message: "報修建立成功"
     });
 
   } catch (err) {
@@ -36,8 +26,7 @@ app.post("/repair", async (req, res) => {
     console.error(err);
 
     res.status(500).json({
-      success: false,
-      error: err.message
+      success: false
     });
 
   }
