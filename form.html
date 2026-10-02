@@ -3,45 +3,21 @@
 <head>
 <meta charset="utf-8">
 <title>設備報修</title>
-
-<style>
-body{
-    font-family: Arial, sans-serif;
-    padding:20px;
-}
-
-input,
-textarea{
-    width:100%;
-    padding:10px;
-    margin-bottom:15px;
-    box-sizing:border-box;
-}
-
-button{
-    width:100%;
-    padding:12px;
-    background:#00c73c;
-    color:white;
-    border:none;
-    cursor:pointer;
-}
-</style>
-
 </head>
-
 <body>
 
-<h2>🔧 設備報修</h2>
+<h2>設備報修</h2>
 
-<form action="/repairlabel>
-<input type="text" name="reporter" required>
+/repair
 
-<label>設備名稱</label>
-<input type="text" name="equipment" required>
+<label>填報人</label><br>
+<input type="text" name="reporter"><br><br>
 
-<label>故障描述</label>
-<textarea name="description" rows="5"></textarea>
+<label>設備名稱</label><br>
+<input type="text" name="equipment"><br><br>
+
+<label>故障描述</label><br>
+<textarea name="description"></textarea><br><br>
 
 <button type="submit">
 送出報修
@@ -51,3 +27,4 @@ button{
 
 </body>
 </html>
+``
